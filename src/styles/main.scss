@@ -1,0 +1,81 @@
+body    {margin: 0;}
+
+.intro  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    
+    flex-direction: column;   
+
+    .title  {
+        display: flex;        
+        flex-direction: column;   
+        align-items: center;
+        border-radius: 15px;
+        border-style: double;
+        padding: 15px;
+        
+
+        .jank   {
+            font-family: fantasy;
+            border-style: groove;    
+            border-radius: 20px;
+            padding:10px;
+            color: white;
+            background-color: black;
+            box-shadow: inset;
+        }           
+
+        .start {
+            height: 40px;
+            width: 80px;
+            border-radius: 20px;
+            margin-top: 25px;
+        
+            &:hover {
+                background-color: black;
+                color: white;
+            }
+
+            &:active{
+                background-color: yellow;
+                color:black; 
+                box-shadow: inset -3px 3px 9px 2px #c1c1c1;
+            }
+        }
+    }   
+}
+
+.game_title{
+    display: flex;        
+    flex-direction: column;   
+    align-items: center;
+    border-radius: 15px;
+    border-style: double;
+    padding: 15px;
+
+    .game_jank   {
+        font-family: fantasy;
+        border-style: groove;    
+        border-radius: 20px;
+        padding:10px;
+        color: white;
+        background-color: black;
+        box-shadow: inset;
+    }  
+}
+
+.game_screen{
+    margin-top: 20px;
+    width:40vw;
+    height:65vh;
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+}
+
+
+
+
+
+

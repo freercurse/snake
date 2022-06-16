@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Game from './components/game'
+
 
 function App() {
+  const [playing, setPlaying] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="intro">
+      {!playing ?
+        <div className='title'>
+          <h1>Welcome to Snake! <i className='jank'>Jank edition</i> </h1>
+          <button className='start' onClick={() => {setPlaying(!playing)}}>Start!</button>
+        </div> :
+        <>
+        <div className='game_title'>
+          <h1>Playing Snake <i className='game_jank'>WAW</i></h1>             
+        </div>
+        <Game/>
+        </>
+           
+      }
+      
+      
     </div>
   );
 }
