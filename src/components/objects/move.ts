@@ -1,36 +1,46 @@
+import { useState } from "react";
 import { Snake } from "../../../types";
 
-export default function move(snake:Snake,movement:string ) {
-
-    const Sparts = snake.parts
+export default function Move(snake:Snake,movement:string ) {    
+    
+   const sParts = copy(snake?.parts)
 
     switch(movement) {
+        
         case 'w':
-            Sparts[Sparts.length - 1].y-=5
+            sParts[sParts.length - 1].y-=20
             break;
         case 'a':
-            Sparts[Sparts.length - 1].x-=5
+            sParts[sParts.length - 1].x-=20
             break;
         case 's':
-            Sparts[Sparts.length - 1].y+=5
+            sParts[sParts.length - 1].y+=20
             break;
         case 'd':
-            Sparts[Sparts.length - 1].x+=5
+            sParts[sParts.length - 1].x+=20
             break;
+       
+            
+    }
+
+    
+    
+    for(let i = sParts.length - 2; i > -1; i--) {
+        
+        sParts[i].x = snake.parts[i+1].x
+        sParts[i].y = snake.parts[i+1].y
+        
+    }      
+    
+    const ret = {
+        parts:sParts,
+        colour:snake.colour
     }
     
-    for(let i = Sparts.length - 2; i > -1; i -=1) {
-        console.log(Sparts[i])
-        Sparts[i].x = snake.parts[i+1].x
-        Sparts[i].y = snake.parts[i+1].y
-        console.log(snake.parts)
-    }
-    
-    const ret : Snake= {
-        parts: Sparts,
-        colour: snake.colour 
-    }   
-    console.log(ret)
     return ret
+    
 }
 
+function copy(array:Array<any>) {
+    return JSON.parse(JSON.stringify(array));
+  }
