@@ -5,6 +5,8 @@ export default function Move(snake:Snake,movement:string ) {
     
    const sParts = copy(snake?.parts)
 
+   
+    
     switch(movement) {
         
         case 'w':

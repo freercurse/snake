@@ -5,6 +5,16 @@ import Game from './components/game'
 function App() {
   const [playing, setPlaying] = useState(false)
 
+  function handleGO(success:boolean) {
+    if(success) {
+      alert("well i guess you dont totally suck!")
+    } else {
+      alert("You died!, maybe try better next time hmmm?")
+    }
+    
+    setPlaying(false)
+  }
+
   return (
     <div className="intro">
       {!playing ?
@@ -16,7 +26,7 @@ function App() {
         <div className='game_title'>
           <h1>Playing Snake <i className='game_jank'>WAW</i></h1>             
         </div>
-        <Game/>
+        <Game GameOver={handleGO}/>
         </>
            
       }
