@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Snake } from "../../../types";
 
 export default function Move(snake:Snake,movement:string ) {    
